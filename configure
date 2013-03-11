@@ -2612,6 +2612,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
 
 ac_config_headers="$ac_config_headers "
 
+
 ac_ext=c
 ac_cpp='$CPP $CPPFLAGS'
 ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
@@ -6319,7 +6320,7 @@ $as_echo_n "checking Carbon and QuickTime framework... " >&6; }
 /* end confdefs.h.  */
  #include <Carbon/Carbon.h>
 							#include <QuickTime/QuickTime.h>
-							int main(){InitCursor();EnterMovies();return 0;}
+							int main(){EnterMovies();return 0;}
 _ACEOF
 if ac_fn_cxx_try_compile "$LINENO"; then :
   { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5

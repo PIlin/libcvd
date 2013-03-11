@@ -2,6 +2,7 @@ AC_INIT(CVD,0.8)
 AC_COPYRIGHT(Copyright foo)
 
 AC_CONFIG_HEADERS
+
 AC_HEADER_STDC
 #Use builtin autoconf checks for all the programs we need.
 AC_PROG_AWK
@@ -476,7 +477,7 @@ then
 		AC_MSG_CHECKING(Carbon and QuickTime framework)
 		AC_COMPILE_IFELSE([AC_LANG_SOURCE([ #include <Carbon/Carbon.h>
 							#include <QuickTime/QuickTime.h>
-							int main(){InitCursor();EnterMovies();return 0;}])],
+							int main(){EnterMovies();return 0;}])],
 							[AC_MSG_RESULT(yes)], 
 							[AC_MSG_RESULT(no); a=1]) 
 	])

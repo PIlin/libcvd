@@ -171,7 +171,15 @@ template<class C> void play(string s)
 				buffer->put_frame(frame);
 			frame = buffer->get_frame();
 			new_frame=1;
+#ifdef GL_TEXTURE_RECTANGLE_ARB
+			glTexImage2D(*frame, 0, GL_TEXTURE_RECTANGLE_ARB);
+#else
+#ifdef GL_TEXTURE_RECTANGLE_NV
 			glTexImage2D(*frame, 0, GL_TEXTURE_RECTANGLE_NV);
+#else
+			glTexImage2D(*frame, 0, GL_TEXTURE_RECTANGLE_EXT);
+#endif
+#endif
 		}
 		
 		if(a.expose || new_frame)
